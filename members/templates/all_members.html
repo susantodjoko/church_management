@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>Daftar Warga Jemaat Kemiri Blok 3</h1>
+<h2>Total anggota: {{ mymembers|length }}</h2>
+<h3>Anggota</h3>
+
+<ul>
+  {% for x in mymembers %}
+
+    <li>{{ forloop.counter }}.{{mymember.id}} <a href="details/{{ x.id}}">{{ x.nama_lengkap}}</a></li>
+  {% endfor %}
+</ul>
+
+
+</body>
+</html>

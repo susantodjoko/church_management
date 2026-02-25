@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+<p>Member ID: {{ mymember.id }}</p>
+<h2>Nama: {{ mymember.nama_lengkap }}</h2>
+
+<p>Nama kepala keluarga: {{ mymember.keluarga.nama_keluarga }}</p>
+  
+<p>Jenis Kelamin: {{ mymember.jenis_kelamin }}</p>
+<p>Tanggal Lahir: {{ mymember.tanggal_lahir }}</p>
+<p>Alamat: {{ mymember.keluarga.alamat }}</p>
+<p>Nomor Telepon: {{ mymember.nomor_telepon }}</p>
+
+<p>Baptis: {{ mymember.sudah_baptis|yesno:'Sudah,Belum'}}</p>
+<p>Sidi: {{ mymember.sudah_sidi|yesno:'Sudah,Belum'}}</p>
+<p>Pelayanan: {{ mymember.pelayanan_diikuti }}</p>
+<p>Ibadah: {{ mymember.ibadah_sering_diikuti }}</p>
+
+<p>Kembali ke <a href="/members">Daftar Jemaat</a></p>
+
+<hr>
+<p>Jumlah data:{{riwayat|length}}</p>
+
+<h3>Riwayat Perpuluhan</h3>
+<table class = 'table table-bordered'>
+    <tr>
+        <th>Tanggal</th>
+        <th>Jumlah</th>
+        <th>Metode</th>
+    </tr>
+    {% for p in riwayat %}
+    <tr>
+        <td>{{ p.tanggal }}</td>d
+        <td>{{ p.jumlah }}</td>
+        <td>{{ p.metode_pembayaran }}</td>
+    </tr>
+    {% empty %}
+    
+    <tr>
+        <td colspan="3">Belum ada riwayat perpuluhan.</td>
+    </tr>
+    {% endfor %}
+</table>
+</body>
+</html>

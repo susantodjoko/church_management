@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./myworld/gkj_app"
+    ],
+    "python-envs.defaultEnvManager": "ms-python.python:venv"
+}
